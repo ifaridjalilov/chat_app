@@ -3,14 +3,16 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 50px;
   width: 270px;
   height: 420px;
 }
 
-.messenger {
+.messenger,
+.messenger .messenger-header .circle {
+  display: block;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -21,20 +23,19 @@
   position: relative;
 }
 
-.messenger .messenger-header img {
-  width: 34px;
-}
-
 .messenger .messenger-header {
-  padding: 15px 25px;
+  padding: 8px 25px;
   background-color: #333;
   color: #fff;
-  height: 70px;
+}
+
+.messenger .messenger-header .circle {
+  background-color: white;
 }
 
 .messenger .messenger-content {
-  height: 275px;
-  overflow: scroll;
+  height: 290px;
+  overflow-y: scroll;
 }
 
 .messenger .messenger-footer {
@@ -45,10 +46,12 @@
   position: absolute;
 }
 
-.messenger .messenger-footer textarea {
+.messenger .messenger-footer .typeArea {
   width: 100%;
   padding: 10px;
   max-height: 230px;
+  background-color: white;
+  overflow-y: auto;
 }
 
 .messenger .messenger-footer .smile {

@@ -15,17 +15,25 @@
               <div class="messenger-header">
                 <div class="row">
                   <div class="col-xs-3">
-                    <img src="avatar.png" alt="Avatar" class="img-responsive img-circle">
+                    <div class="circle">
+
+                    </div>
+                    <div class="circle">
+
+                    </div>
+                    <div class="circle">
+
+                    </div>
                   </div>
                   <div class="col-xs-9">
-                    <h4>Farid Jalilov</h4>
+                    <h5>John Walley</h5>
                   </div>
                 </div>
               </div>
               <!-- ################### -->
 
               <!-- Messenger Content -->
-              <div class="messenger-content">
+              <div class="messenger-content" id="mes-con">
 
                 <div class="message-outer">
                   <div class="row">
@@ -72,7 +80,7 @@
 
               <!-- Messenger Footer -->
               <div class="messenger-footer">
-                <textarea rows="1" placeholder="Type here..." onkeyup="textAreaAdjust(this)"></textarea>
+                <div contenteditable="true" rows="1" placeholder="Type here..." onkeyup="textAreaAdjust(this)" class="typeArea"></div>
                 <i class="smile" aria-hidden="true">&#9786</i>
               </div>
               <!-- ################### -->
@@ -80,11 +88,23 @@
           </div>
       <script>
       function textAreaAdjust(o) {
-        o.style.height = "1px";
-        o.style.height = (25+o.scrollHeight)+"px";
+        var contentHeight = 330;
 
-        // document.getElementsByClassName('messenger-content')[0].style.height = (350 - o.style.height)+"px";
+        o.style.height = "1px";
+        o.style.height = o.scrollHeight+"px";
+        if (o.scrollHeight <= 230)
+        {
+          document.getElementById('mes-con').style.height = (contentHeight - o.scrollHeight)+"px";
+          scrollToBottom('mes-con');
+        }
       }
+
+      function scrollToBottom(id) {
+        var elem = document.getElementById(id);
+        elem.scrollTop = elem.scrollHeight;
+      }
+
+      scrollToBottom('mes-con');
       </script>
   </body>
 </html>
